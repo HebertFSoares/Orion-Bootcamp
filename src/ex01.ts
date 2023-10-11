@@ -2,8 +2,9 @@ function contadorVogais(palavra: string): number {
     // Adicionando a frase toda em maiúsculo
     palavra = palavra.toLowerCase();
 
-    // criando vetor com todas vogais
-    const todasVogais: string[] = ['a', 'e', 'i', 'o', 'u'];
+    // Define um array com todas as vogais, incluindo vogais com acentos
+    const todasVogais: string[] = ['a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ó', 'ú', 'à', 'è', 'ì', 'ò', 'ù'];
+
 
     let contador: number = 0;
 
