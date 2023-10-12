@@ -1,30 +1,30 @@
-// Esta função conta o número de vogais em uma palavra dada, incluindo vogais com acentos.
+"use strict";
 function contadorVogais(palavra) {
-    // Adicionando a frase toda em maiúsculo
     palavra = palavra.toLowerCase();
-    // Define um array com todas as vogais, incluindo vogais com acentos
-    var todasVogais = ['a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ó', 'ú', 'à', 'è', 'ì', 'ò', 'ù'];
-    var contador = 0;
-    // Passando por todas as vogais
-    for (var i = 0; i < palavra.length; i++) {
-        // Verificando se a palavra tem vogal
+    const todasVogais = [
+        'a', 'á', 'à', 'â', 'ã',
+        'e', 'é', 'è', 'ê',
+        'i', 'í', 'ì', 'î',
+        'o', 'ó', 'ò', 'ô', 'õ',
+        'u', 'ú', 'ù', 'û',
+    ];
+    let contador = 0;
+    for (let i = 0; i < palavra.length; i++) {
         if (todasVogais.indexOf(palavra[i]) !== -1) {
             contador++;
         }
     }
     return contador;
 }
-// Execução pelo parâmetro
-var exemplo = "orion-bootcamp";
-var quantVogais = contadorVogais(exemplo);
-console.log("A palavra \"".concat(exemplo, "\" possui um total de ").concat(quantVogais, " vogais."));
-// Execução pelo index.html
+const exemplo = "orion-bootcamp";
+const quantVogais = contadorVogais(exemplo);
+console.log(`A palavra "${exemplo}" possui um total de ${quantVogais} vogais.`);
 function contadorWeb() {
-    var campoForm = document.getElementById("palavra");
-    var resultado = document.getElementById("resultado");
-    var palavraInserida = campoForm.value;
-    var quantVogais = contadorVogais(palavraInserida);
+    const campoForm = document.getElementById("palavra");
+    const resultado = document.getElementById("resultado");
+    const palavraInserida = campoForm.value;
+    const quantVogais = contadorVogais(palavraInserida);
     if (resultado) {
-        resultado.textContent = "A palavra \"".concat(palavraInserida, "\" possui um total de ").concat(quantVogais, " vogais.");
+        resultado.textContent = `A palavra "${palavraInserida}" possui um total de ${quantVogais} vogais.`;
     }
 }

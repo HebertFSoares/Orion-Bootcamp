@@ -1,9 +1,20 @@
+/**
+ * Conta o número de vogais em uma palavra, incluindo vogais com acento.
+ * @param palavra - A palavra para a qual deseja contar as vogais.
+ * @returns O número de vogais na palavra.
+ */
 function contadorVogais(palavra: string): number {
     // Adicionando a frase toda em maiúsculo
     palavra = palavra.toLowerCase();
 
     // Define um array com todas as vogais, incluindo vogais com acentos
-    const todasVogais: string[] = ['a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ó', 'ú', 'à', 'è', 'ì', 'ò', 'ù'];
+    const todasVogais: string[] = [
+      'a', 'á', 'à', 'â', 'ã',
+      'e', 'é', 'è', 'ê',
+      'i', 'í', 'ì', 'î',
+      'o', 'ó', 'ò', 'ô', 'õ',
+      'u', 'ú', 'ù', 'û',
+  ];
 
 
     let contador: number = 0;
@@ -26,7 +37,9 @@ const exemplo: string = "orion-bootcamp";
 const quantVogais: number = contadorVogais(exemplo);
 console.log(`A palavra "${exemplo}" possui um total de ${quantVogais} vogais.`);
 
-// Execução pelo index.html
+/**
+ * Exibe o número de vogais em uma palavra na página HTML.
+ */
 function contadorWeb() {
     const campoForm = document.getElementById("palavra") as HTMLInputElement;
     const resultado = document.getElementById("resultado");
