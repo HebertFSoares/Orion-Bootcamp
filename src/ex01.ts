@@ -40,7 +40,7 @@ console.log(`A palavra "${exemplo}" possui um total de ${quantVogais} vogais.`);
 /**
  * Exibe o número de vogais em uma palavra na página HTML.
  */
-function contadorWeb() {
+function contadorWeb(): void {
     const campoForm = document.getElementById("palavra") as HTMLInputElement;
     const resultado = document.getElementById("resultado");
     const palavraInserida = campoForm.value;
