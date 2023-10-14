@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <form id="formEnviarID">
+      <h2>Consulta</h2>
+        <label for="ID">ID:</label>
+        <input type="number" id="ID" name="ID">
+        <button type="submit" id="mostrarNome">Consultar Nome</button>
+        <button type="submit" id="mostrarBiografia">Consultar Biografia</button>
+        <button type="submit" id="removerRegistro">Apagar Registro</button>
+        <div id="respForm1"></div>
+    </form>
+    <form id="formAlteracao">
+        <h2>Alterações</h2>
+        <label for="ID">ID:</label>
+        <input type="number" id="ID" name="ID">
+        <label for="escolhaEnum">Selecione o Atributo:</label>
+        <select id="escolhaEnum" name="campo">
+            <option value="nome">Nome</option>
+            <option value="biografia">Biografia</option>
+        </select>
+        <label for="novoconteudo">Novo Valor:</label>
+        <input type="text" id="novoconteudo" name="novoconteudo">
+        <button type="submit" id="alterarRegistro">Alterar</button>
+        <div id="respForm2"></div>
+    </form>
+    <h2>Lista de Pessoas</h2>
+    <ul id="lista-pessoas"></ul>
+    <script src="js/ex02.js"></script>
+</body>
+</html>
