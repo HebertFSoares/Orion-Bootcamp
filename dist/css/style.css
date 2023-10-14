@@ -1,0 +1,111 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  h2 {
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para o primeiro exercício */
+  #contarVogais {
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #contarVogais:hover {
+   background-color: #27ae60;
+  }
+
+  #formulario {
+    margin-top: 20px;
+  }
+  
+  label, input, button {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  button {
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Novo estilo para ocupar 100% da largura */
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #resultado {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para o segundo exercício */
+  #formEnviarID, #formAlteracao {
+    margin-top: 20px;
+  }
+  
+  select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para botões no segundo exercício */
+  button[type="submit"] {
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Novo estilo para ocupar 100% da largura */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #27ae60;
+  }
+  
+  #respForm1, #respForm2 {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  #lista-pessoas {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #lista-pessoas li {
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
