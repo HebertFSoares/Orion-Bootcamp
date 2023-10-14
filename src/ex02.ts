@@ -12,30 +12,49 @@ let pessoas: Pessoa[] = [
   { id: 3, nome: "Nikola Tesla", biografia: "Nikola Tesla foi um inventor, engenheiro eletrotécnico e engenheiro mecânico sérvio, mais conhecido por suas contribuições ao projeto do moderno sistema de fornecimento de eletricidade em corrente alternada." },
   { id: 4, nome: "Nicolau Copérnico", biografia: "Nicolau Copérnico foi um astrônomo e matemático polonês que desenvolveu a teoria heliocêntrica do Sistema Solar." }
 ];
-
-// Função para obter a biografia de uma pessoa pelo ID no paradigma funcional
+/**
+ * Retorna a biografia de uma pessoa com base no ID.
+ * @param id - O ID da pessoa.
+ * @param listaPessoas - A lista de pessoas para procurar.
+ * @returns A biografia da pessoa ou uma mensagem de erro se a pessoa não for encontrada.
+ */
 const obterBiografiaPorIDFuncional = (id: number, listaPessoas: Pessoa[]): string => {
   const pessoa = listaPessoas.find(pessoa => pessoa.id === id);
   return pessoa ? pessoa.biografia : "Pessoa não encontrada.";
 };
 
-// Função para obter a biografia de uma pessoa pelo ID no paradigma imperativo
-function obterBiografiaPorIDImperativo(id: number, listaPessoas: Pessoa[]): string {
-  for (let i = 0; i < listaPessoas.length; i++) {
-    if (listaPessoas[i].id === id) {
-      return listaPessoas[i].biografia;
+/**
+ * Retorna a biografia de uma pessoa pelo ID no paradigma imperativo.
+ * @param id - O ID da pessoa.
+ * @returns A biografia da pessoa ou uma mensagem de erro se a pessoa não for encontrada.
+ */
+function obterBiografiaPorIDImperativo(id: number): string {
+  for (let i = 0; i < pessoas.length; i++) {
+    if (pessoas[i].id === id) {
+      return pessoas[i].biografia;
     }
   }
   return "Pessoa não encontrada.";
 }
 
-// Função para obter o nome de uma pessoa pelo ID no paradigma funcional
+
+/**
+ * Retorna o nome de uma pessoa pelo ID no paradigma funcional.
+ * @param id - O ID da pessoa.
+ * @param listaPessoas - A lista de pessoas.
+ * @returns O nome da pessoa ou uma mensagem de erro se a pessoa não for encontrada.
+ */
 const obterNomePorIDFuncional = (id: number, listaPessoas: Pessoa[]): string => {
   const pessoa = listaPessoas.find(pessoa => pessoa.id === id);
   return pessoa ? pessoa.nome : "Pessoa não encontrada.";
 };
 
-// Função para obter o nome de uma pessoa pelo ID no paradigma imperativo
+/**
+ * Retorna o nome de uma pessoa pelo ID no paradigma imperativo.
+ * @param id - O ID da pessoa.
+ * @param listaPessoas - A lista de pessoas.
+ * @returns O nome da pessoa ou uma mensagem de erro se a pessoa não for encontrada.
+ */
 function obterNomePorIDImperativo(id: number, listaPessoas: Pessoa[]): string {
   for (let i = 0; i < listaPessoas.length; i++) {
     if (listaPessoas[i].id === id) {
@@ -45,7 +64,12 @@ function obterNomePorIDImperativo(id: number, listaPessoas: Pessoa[]): string {
   return "Pessoa não encontrada.";
 }
 
-// Função para remover uma pessoa da lista pelo ID no paradigma funcional
+/**
+ * Remove uma pessoa da lista pelo ID no paradigma funcional.
+ * @param id - O ID da pessoa a ser removida.
+ * @param listaPessoas - A lista de pessoas.
+ * @returns Uma mensagem de confirmação se a pessoa foi removida com sucesso ou uma mensagem de erro se a pessoa não for encontrada.
+ */
 const removerPessoaPorIDFuncional = (id: number, listaPessoas: Pessoa[]): string => {
   const pessoaEncontrada = listaPessoas.find(pessoa => pessoa.id === id);
 
@@ -61,7 +85,12 @@ const removerPessoaPorIDFuncional = (id: number, listaPessoas: Pessoa[]): string
   }
 };
 
-// Função para remover uma pessoa da lista pelo ID no paradigma imperativo
+/**
+ * Remove uma pessoa da lista pelo ID no paradigma imperativo.
+ * @param id - O ID da pessoa a ser removida.
+ * @param listaPessoas - A lista de pessoas.
+ * @returns Uma mensagem de confirmação se a pessoa foi removida com sucesso ou uma mensagem de erro se a pessoa não for encontrada.
+ */
 function removerPessoaPorIDImperativo(id: number, listaPessoas: Pessoa[]): string {
   let indiceParaRemover = -1;
 
@@ -82,7 +111,14 @@ function removerPessoaPorIDImperativo(id: number, listaPessoas: Pessoa[]): strin
   }
 }
 
-// Função para alterar o nome ou a biografia de uma pessoa pelo ID no paradigma funcional
+/**
+ * Altera o nome ou a biografia de uma pessoa pelo ID no paradigma funcional.
+ * @param id - O ID da pessoa.
+ * @param campo - O campo a ser alterado, 'nome' ou 'biografia'.
+ * @param novoTexto - O novo texto a ser atribuído.
+ * @param listaPessoas - A lista de pessoas.
+ * @returns Uma mensagem de confirmação se a alteração foi feita com sucesso ou uma mensagem de erro se a pessoa não for encontrada ou o texto for inválido.
+ */
 const alterarRegistroPorIDFuncional = (id: number, campo: string, novoTexto: string, listaPessoas: Pessoa[]): string => {
   if (novoTexto === null) {
     return "Texto inválido.";
@@ -101,7 +137,6 @@ const alterarRegistroPorIDFuncional = (id: number, campo: string, novoTexto: str
 
     const indicePessoa = listaPessoas.findIndex(pessoa => pessoa.id === id);
     listaPessoas[indicePessoa] = pessoaModificada;
-
     exibirRegistros(listaPessoas); // Atualiza a lista no HTML
     return "Alteração feita com sucesso.";
   } else {
@@ -109,7 +144,14 @@ const alterarRegistroPorIDFuncional = (id: number, campo: string, novoTexto: str
   }
 };
 
-// Função para alterar o nome ou a biografia de uma pessoa pelo ID no paradigma imperativo
+/**
+ * Altera o nome ou a biografia de uma pessoa pelo ID no paradigma imperativo.
+ * @param id - O ID da pessoa.
+ * @param campo - O campo a ser alterado, 'nome' ou 'biografia'.
+ * @param novoTexto - O novo texto a ser atribuído.
+ * @param listaPessoas - A lista de pessoas.
+ * @returns Uma mensagem de confirmação se a alteração foi feita com sucesso ou uma mensagem de erro se a pessoa não for encontrada ou o texto for inválido.
+ */
 function alterarRegistroPorIDImperativo(id: number, campo: string, novoTexto: string, listaPessoas: Pessoa[]): string {
   let indiceParaAlterar = -1;
 
@@ -138,7 +180,10 @@ function alterarRegistroPorIDImperativo(id: number, campo: string, novoTexto: st
   }
 }
 
-// Função para exibir registros na página HTML
+/**
+ * Exibe registros na página HTML.
+ * @param lista - A lista de pessoas a ser exibida.
+ */
 function exibirRegistros(lista: Pessoa[]) {
   const listaExibicao = document.getElementById("lista-pessoas") as HTMLUListElement;
 
